@@ -1,14 +1,19 @@
 import "./styles.css";
+import soundFile from "./assets/muzyczka.mp3";
+
 function SongPlayer(props) {
   return (
     <section>
-      <h1>Music Player</h1>
-      <img
-        width="250"
-        height="250"
-        alt="Song cover"
-        scr={props.song.coverUrl}
-      ></img>
+      <h1>Posłuchaj se</h1>
+      <div>
+        <img
+          width="250"
+          height="250"
+          position="center"
+          alt="Song cover"
+          src={props.song.coverUrl}
+        ></img>
+      </div>
       <audio controls>
         <source src={props.song.audioUrl} />
       </audio>
@@ -17,7 +22,7 @@ function SongPlayer(props) {
 }
 export default function App() {
   const currentSong = {
-    audioUrl: "/src/assets/muzyczka.mp3",
+    audioUrl: soundFile,
     coverUrl:
       "https://plusmusic.pl/presenter/image/5498183.gif?pid=5498183&type=www&no=1&scale=50",
     title: "Wojownicy Wódy",
